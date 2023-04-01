@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TrainStationManagement.Models.TrainStation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Train Stations</h1>
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StationAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StationLocation)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StationAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StationLocation)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

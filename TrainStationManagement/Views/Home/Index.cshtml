@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TrainStationManagement.Models.Train>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="center">Trains</h1>
+
+
+<table class="table table-striped table-dark">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureStation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalStation)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureStation.StationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalStation.StationName)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
