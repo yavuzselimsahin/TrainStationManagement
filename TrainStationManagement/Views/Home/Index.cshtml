@@ -5,23 +5,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="center">Trains</h1>
+<div class="text-center">
+    <h1>Trains</h1>
+</div>
 
 
-<table class="table table-striped table-dark">
-    <thead class="thead-dark">
+<table class="table table-hover table-striped table-">
+    <thead class="custom-thead">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DepartureTime)
+                Train ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ArrivalTime)
+                Departure Time
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DepartureStation)
+                Departure Station
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ArrivalStation)
+                Arrival Time
+            </th>
+            <th>
+                Arrival Station
             </th>
             
         </tr>
@@ -30,14 +35,17 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.TrainId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.DepartureTime)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartureStation.StationName)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ArrivalTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartureStation.StationName)
-            </td>
+            </td>  
             <td>
                 @Html.DisplayFor(modelItem => item.ArrivalStation.StationName)
             </td>

@@ -20,3 +20,6 @@ html {
 body {
   margin-bottom: 60px;
 }
+.custom-thead {
+    background-color: #b2b1b1; 
+}

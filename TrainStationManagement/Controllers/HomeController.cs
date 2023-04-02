@@ -17,7 +17,7 @@ namespace TrainStationManagement.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var trainStationManagementContext = _context.Train.Include(t => t.ArrivalStation).Include(t => t.DepartureStation);
+            var trainStationManagementContext = _context.Train.Include(t => t.ArrivalStation).Include(t => t.DepartureStation).OrderBy(t => t.DepartureTime);
             return View(await trainStationManagementContext.ToListAsync());
         }
 
